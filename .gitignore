@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# MDL files
+parser.out
+parsetab.py
+
 # C extensions
 *.so
 
