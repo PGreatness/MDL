@@ -86,8 +86,8 @@ t_ignore = " \t"
 
 def t_ID(t):
     r'[a-zA-Z_][a-zA-Z_0-9]*'
-    if reserved.has_key(t.value):
-        t.type = reserved.get(t.value)
+    if t.value in reserved.keys():
+        t.type = reserved[t.value]
     return t
 
 def t_STRING(t):

@@ -105,7 +105,7 @@ def load_ply_lex():
     if sys.version_info[0] < 3:
         import lex
     else:
-        import ply.lex as lex
+        import lex
     return lex
 
 # This object is a stand-in for a logging object created by the 
@@ -195,6 +195,7 @@ class YaccProduction:
         self.lexer = None
         self.parser= None
     def __getitem__(self,n):
+        if type(n)==slice: return [s.value for s in self.slice[n]]
         if n >= 0: return self.slice[n].value
         else: return self.stack[n].value
 
